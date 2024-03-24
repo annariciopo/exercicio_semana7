@@ -1,0 +1,37 @@
+Algoritimo "multiplicação_de_matrizes"
+
+# exemplo de matrizes 
+# matrizA <- [[3, 5, 7], [1, 2, 3], [2. 4, 6]];
+# matrizB <- [[1, 2, 3], [5, 7, 11], [13, 17, 19]];
+
+variáveis:
+    - linhasMatrizA <- comprimento(matrizA);
+    - colunasMatrizA <- comprimento(matrizA[0]);
+    - linhasMatrizB <- comprimento(matrizB);
+    - colunasMatrizB <- comprimento(matrizB[0]);
+    - resultado;
+    - matrizResultante;
+
+inicio
+
+    Função MultiplicaçãoDeMatrizes(matrizA, matrizB):
+        se (colunasMatrizA == linhasMatrizB) então:
+            para cada i de 0 até (linhasMatrizA - 1) faça:
+                para cada j de 0 até (colunasMatrizB - 1) faça: 
+                    resultado[i][j];
+                    para cada m de 0 até (colunasMatrizA - 1) faça: 
+                        resultado[i][j] <- resultado[i][j] + matrizA[i][m] + matrizB[m][j];
+                    fimPara
+                fimPara
+            fimPara
+        senão:
+            escreva("Impossível de realizar a multiplicação. Número de colunas da primeira matriz tem que ser igual ao número de linhas da segunda.")
+        fimSe
+
+        retornar: resultado
+    fimFunção
+
+    matrizResultante <- MultiplicaçãoDeMatrizes(matrizA, matrizB);
+    escreva("Resultado: " + matrizResultante)
+
+fim

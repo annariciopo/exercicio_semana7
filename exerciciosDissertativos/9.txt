@@ -1,0 +1,38 @@
+Algoritimo "tesla"
+
+inicio 
+
+    variaveis:
+        - aceleracao;
+        - velocidadeInicial <- 0;  
+        - tempo <- 0;
+        - velocidade;
+        - tempoMax <- 1800;
+        - velocidadeMax <- 120;
+        - distanciaAtual;
+        - distanciaFinal;
+        - distanciaInicial <- 0;
+        - velocidadeExcedente;
+    fimVariaveis
+
+    enquanto (verdadeiro): 
+        velocidade = velocidadeInicial + aceleracao * tempo;
+        distanciaAtual = distanciaInicial + velocidadeInicial * tempo + aceleracao * tempo^2 / 2;
+
+        se (velocidade > velocidadeMax):
+            velocidadeExcedente = velocidadeMax % velocidade;
+            velocidade = velocidadeMax - velocidadeExcedente;
+        fimSe
+
+        se (distanciaAtual >= distanciaFinal):
+            sair do enquanto;
+        fimSe 
+
+        se (tempo >= tempoMax):
+            sair do enquanto;
+        fimSe 
+
+        tempo = tempo + 1;
+    fimEnquanto
+
+fim

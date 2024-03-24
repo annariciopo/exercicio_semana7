@@ -1,0 +1,20 @@
+Algoritimo "direito_votar"
+
+variáveis:
+    idade: inteiro;
+
+inicio
+
+    escreva("insira sua idade")
+    leia(idade);
+
+    se (idade < 16) então:
+        escreva("Não pode votar!") ;
+    senão:
+        se (idade >= 16 e idade < 18) então 
+            escreva("Voto facultativo!");
+        senão:
+            escreva("Voto obrigatório!");
+    fimSe
+
+fim
